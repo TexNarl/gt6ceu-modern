@@ -1,0 +1,13 @@
+{
+  "itemGroup.gt6ceu": "Example Mod Tab",
+  "block.gt6ceu.example_block": "Example Block",
+  "item.gt6ceu.example_item": "Example Item",
+
+  "gt6ceu.configuration.title": "GT6 CEu Modern Configs",
+  "gt6ceu.configuration.section.gt6ceu.common.toml": "GT6 CEu Modern Configs",
+  "gt6ceu.configuration.section.gt6ceu.common.toml.title": "GT6 CEu Modern Configs",
+  "gt6ceu.configuration.items": "Item List",
+  "gt6ceu.configuration.logDirtBlock": "Log Dirt Block",
+  "gt6ceu.configuration.magicNumberIntroduction": "Magic Number Text",
+  "gt6ceu.configuration.magicNumber": "Magic Number"
+}
