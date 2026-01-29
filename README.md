@@ -21,6 +21,8 @@ while reimplementing it on top of modern Minecraft and NeoForge.
 ---
 
 ## License
+Some files may originate from the NeoForged MDK template and are licensed
+under the MIT License. See LICENSE-THIRD-PARTY for details.
 
 ### Code
 Licensed under the **GNU Lesser General Public License v3.0 or later (LGPL-3.0-or-later)**.
