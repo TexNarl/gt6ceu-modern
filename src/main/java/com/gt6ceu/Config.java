@@ -1,4 +1,4 @@
-package com.gt6ceu.modern;
+package com.gt6ceu;
 
 import java.util.List;
 
