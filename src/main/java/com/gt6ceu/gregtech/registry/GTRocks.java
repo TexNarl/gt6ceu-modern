@@ -15,6 +15,8 @@ public final class GTRocks {
     public static final Map<String, DeferredBlock<Block>> ROCKS = new LinkedHashMap<>();
     private static boolean inited = false;
 
+    public static String[] getBaseRocks() { return BASE_ROCKS; }
+
     /** БАЗОВЫЕ ПОРОДЫ (GT6) */
     private static final String[] BASE_ROCKS = {
             "granite.black",
