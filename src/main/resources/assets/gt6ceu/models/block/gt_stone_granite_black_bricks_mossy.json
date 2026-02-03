@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "gt6ceu:block/gt_stone_granite_black_bricks_mossy"
+  }
+}

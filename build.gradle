@@ -18,7 +18,7 @@ version = mod_version
 group = mod_group_id
 
 repositories {
-    // Add here additional repositories if required by some of the dependencies below.
+    maven { url = "https://www.cursemaven.com" }
 }
 
 base {
@@ -116,6 +116,8 @@ dependencies {
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
     // compileOnly "mezz.jei:jei-${mc_version}-common-api:${jei_version}"
     // compileOnly "mezz.jei:jei-${mc_version}-neoforge-api:${jei_version}"
+    localRuntime ("curse.maven:emi-580555:6420931")
+    localRuntime ("curse.maven:jade-324717:7545219")
     // We add the full version to localRuntime, not runtimeOnly, so that we do not publish a dependency on it
     // localRuntime "mezz.jei:jei-${mc_version}-neoforge:${jei_version}"
 
