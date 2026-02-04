@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "gt6ceu:block/ore/gt_crystal_ore_galena__prismarine_light"
+  }
+}
