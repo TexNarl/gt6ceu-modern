@@ -27,13 +27,19 @@ This is a **porting contract**, not a suggestion.
 |---------|--------|
 | PORTED  | Rewritten for NeoForge 1.21.1 + Java 21 |
 | MOVED   | Ported but relocated to a new package/module |
-| REMOVED | File is obsolete and intentionally absent |
+| REMOVED | Obsolete workaround; intentionally absent (requires justification) |
+| PENDING | Not yet processed in the modern codebase (must NOT be counted as REMOVED) |
 
 - **No file may be silently skipped.**
 
 ---
 
 ## 3. Meaning of “REMOVED / DO NOT PORT”
+
+REMOVED is a high-bar status.
+It must NEVER be applied by default.
+A file may be marked REMOVED only with a concrete, file-specific justification.
+Bulk or blanket REMOVED classifications are forbidden.
 
 A file is considered **REMOVED** if it existed in GT6 only as a
 **technical workaround or code-level hack** for limitations of:
@@ -168,8 +174,11 @@ Every PORTED or MOVED Java file must start with:
 
 ## 8. Reporting Requirement
 
+Reporting must include counts for PORTED/MOVED/REMOVED/PENDING.
+PENDING files are expected early on. Do not use REMOVED to avoid PENDING.
+
 Each porting iteration must report:
-1. Count of PORTED / MOVED / REMOVED files
+1. Count of PORTED / MOVED / REMOVED / PENDING files
 2. A list of processed files with:
 - status
 - original path
@@ -187,3 +196,4 @@ The following are considered porting errors:
 - Refactoring code “for cleanliness”
 - Changing visual behavior compared to GT6
 - Introducing new gameplay features not present in GT6
+- Adding test/dummy blocks/items (e.g., "test_ore") instead of porting real GT6 content
