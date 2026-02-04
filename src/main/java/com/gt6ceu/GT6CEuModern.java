@@ -3,12 +3,15 @@ package com.gt6ceu;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
+import com.gt6ceu.gregtech.registry.GTBlockEntities;
+import com.gt6ceu.gregtech.registry.GTBlocks;
+import com.gt6ceu.gregtech.registry.GTWorldgenFeatures;
+import com.gt6ceu.gregtech.worldgen.GtWorldgenBootstrap;
+import com.gt6ceu.gregtech.worldgen.GtWorldgenEvents;
 
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
-import net.minecraft.world.level.block.Blocks;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.Mod;
@@ -47,11 +50,15 @@ public class GT6CEuModern {
         ITEMS.register(modEventBus);
         // Register the Deferred Register to the mod event bus so tabs get registered
         CREATIVE_MODE_TABS.register(modEventBus);
+        GTBlocks.register(modEventBus);
+        GTBlockEntities.register(modEventBus);
+        GTWorldgenFeatures.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in.
         // Note that this is necessary if and only if we want *this* class (GT6CEuModern) to respond directly to events.
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
+        NeoForge.EVENT_BUS.register(GtWorldgenEvents.class);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -61,16 +68,9 @@ public class GT6CEuModern {
     }
 
     private void commonSetup(FMLCommonSetupEvent event) {
-        // Some common setup code
         LOGGER.info("HELLO FROM COMMON SETUP");
 
-        if (Config.LOG_DIRT_BLOCK.getAsBoolean()) {
-            LOGGER.info("DIRT BLOCK >> {}", BuiltInRegistries.BLOCK.getKey(Blocks.DIRT));
-        }
-
-        LOGGER.info("{}{}", Config.MAGIC_NUMBER_INTRODUCTION.get(), Config.MAGIC_NUMBER.getAsInt());
-
-        Config.ITEM_STRINGS.get().forEach((item) -> LOGGER.info("ITEM >> {}", item));
+        event.enqueueWork(GtWorldgenBootstrap::bootstrap);
     }
 
     // Add the example block item to the building blocks tab
