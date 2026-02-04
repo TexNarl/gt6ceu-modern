@@ -29,6 +29,7 @@ Licensed under the **GNU Lesser General Public License v3.0 or later (LGPL-3.0-o
 
 ### Assets
 - Most original assets are released under **CC0 1.0** unless stated otherwise.
+- GregTech logos (if used) are licensed under **CC BY-NC 4.0**.
 - Any GregTech name or references are used for compatibility and descriptive purposes only.
 
 This project contains **no official GregTech branding**.
