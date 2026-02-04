@@ -1,8 +1,5 @@
 package com.gt6ceu;
 
-import com.gt6ceu.gregtech.registry.GTCreativeTabs;
-import com.gt6ceu.gregtech.registry.GTOres;
-import com.gt6ceu.gregtech.registry.GTRocks;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -40,10 +37,6 @@ public class GT6CEuModern {
     // The constructor for the mod class is the first code that is run when your mod is loaded.
     // FML will recognize some parameter types like IEventBus or ModContainer and pass them in automatically.
     public GT6CEuModern(IEventBus modEventBus, ModContainer modContainer) {
-
-        GTRocks.init(); // <-- ВОТ ЭТО ВАЖНО
-        GTOres.init();
-        GTCreativeTabs.ORES_TAB.getId();
 
         // Register the commonSetup method for modloading
         modEventBus.addListener(this::commonSetup);
@@ -83,11 +76,6 @@ public class GT6CEuModern {
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-
-            // Добавляем все камни
-            for (var b : GTRocks.ROCKS.values()) {
-                event.accept(b); // для DeferredBlock это работает
-            }
         }
     }
 

@@ -1,3 +1,6 @@
+This checklist is governed by CODEX_PORTING_SPEC.md.
+All porting work must comply with that specification.
+
 # GregTech 6 CEu Modern — Porting Checklist
 
 This checklist captures the high-level systems that need to be reimplemented
@@ -51,7 +54,8 @@ progress without editing the original sources.
 
 ## Assets & data
 - [ ] **Block/item models**: port or recreate model JSONs and blockstates. (`example_of_gt6/src/main/resources/assets`)
-- [ ] **Textures**: migrate texture assets and update atlases. (`example_of_gt6/src/main/resources/assets`)
+- [ ] **Textures**: copy GT6 textures verbatim; no new or modified images.
+  All visual variants must be achieved via models, blockstates, or code.
 - [ ] **Sounds**: port custom sound assets and events. (`example_of_gt6/src/main/resources/assets`)
 - [ ] **Data packs**: tags, recipes, loot tables. (Modern data pack format)
 - [ ] **Translations**: merge and validate lang files. (`example_of_gt6/src/main/resources/assets`)
